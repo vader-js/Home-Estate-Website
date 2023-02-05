@@ -83,6 +83,27 @@ export const property=[
         water: 2,
         electricity: 2,
     },
+    {
+        id:7,
+        img: property1,
+        location:"2578 Folson Street, San Francisco, CA 94110",
+        title: "Private room",
+        cost: "1200/Month",
+        phone: 4,
+        water: 2,
+        electricity: 2,
+        
+    },
+    {
+        id:8,
+        img: property2,
+        location:"2578 Folson Street, San Francisco, CA 94110",
+        title: "Private room",
+        cost: "1200/Month",
+        phone: 4,
+        water: 2,
+        electricity: 2,
+    }
 ]
 
 export const footer = [

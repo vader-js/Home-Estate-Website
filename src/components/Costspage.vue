@@ -26,8 +26,11 @@ export default {
     name: 'Costpage',
     setup() {
         const tile = ref(tiles)
+        const test = ()=>{
+            console.log("ayo")
+        }
         return {
-            tile
+            tile,test
         }
     }
 }
