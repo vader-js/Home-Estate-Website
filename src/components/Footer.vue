@@ -88,4 +88,8 @@ setup(){
  .display{
     transition: 1;
 }
+img{
+    width: 100%;
+    height: 500px
+}
 </style>

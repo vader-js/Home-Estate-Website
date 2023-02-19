@@ -42,7 +42,11 @@
     </div>
     </div>
     </div>
-    <footer class="pagination" v-for="n in paginationNumber" :key="n"><button @click="handlepagination(n)" class="paginationButton">{{n}}</button></footer>
+    <footer className="pagination">
+    <button @click="handleoperation" :disabled="page <= 1">Prev</button>
+    <nav  v-for="n in paginationNumber" :key="n"><button :class="[page == n ? 'pagination-nav': null]" @click="handlepagination(n)">{{n}} </button></nav>
+    <button @click="handleoperation" :disabled="page >= 2">Next</button>
+    </footer>
   </div>
 </template>
 
@@ -61,6 +65,17 @@ export default {
         const handlepagination = (num)=>{
             return page.value = num;
         }
+        const handleoperation = (e)=>{
+            e.preventDefault();
+            switch (e.target.innerHTML) {
+                case "Prev":
+                    return page.value= page.value - 1;
+                case "Next":
+                    return page.value= page.value + 1;
+                default:
+                    return page.value
+            }
+        }
         const display= computed(()=>{
             return properties.value.slice((6 *(page.value - 1)), (6 * page.value))
         })
@@ -68,7 +83,7 @@ export default {
             return page.value = 1;
         })
         return {
-            properties, paginationNumber, handlepagination, display, viewall
+            properties, paginationNumber, handlepagination, display, viewall, handleoperation, page
         }
 
 }
@@ -205,5 +220,44 @@ export default {
     }
     .bottom span{
         border-right:1px solid #979797 ;
+    }
+    .pagination{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .pagination button{
+        padding: 10px 15px;
+        color: #F4511E;
+        font-size: 16px;
+        line-height: 24px;
+        border-radius: 5px;
+        border: .5px solid #ccc;
+        outline: none;
+    }
+    .pagination-nav{
+        background: #F4511E;
+        color: white !important;
+        border-radius: 5px;
+    }
+    button:disabled{
+        color: #979797;
+    }
+    button:hover{
+        color: white;;
+        background: #F4511E;
+    }
+    @media screen and (max-width: 450px) {
+        .condition{
+            flex-direction: column;
+        }
+        .property{
+            width: 100%;
+        }
+        .propertyspace{
+            margin: 0 auto;
+        }
     }
 </style>

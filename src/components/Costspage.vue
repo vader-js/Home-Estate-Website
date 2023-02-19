@@ -143,5 +143,11 @@ width: 200px;
         width: 150px;
     }
 }
+@media screen and (max-width:1024px) {
+    .costwrapper{
+        height: auto;
+        position: inherit;
+    }
+}
 
 </style>

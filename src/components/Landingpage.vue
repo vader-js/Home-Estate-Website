@@ -73,8 +73,8 @@ export default {
 
 
 .wrapper{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 .bckimage{
     background: linear-gradient(200.44deg, rgba(0, 0, 0, 0.0001) 16.41%, rgba(0, 0, 0, 0.51) 77.16%);
