@@ -30,7 +30,8 @@
              The Most Affordable Place To Stay In The San Francisco Bay Area
         </div>
        <div class="map">
-        <div class="maps"></div>
+        <div class="maps" ref="map"/>
+
         <div class="direction">
             <div class="directioninput">
                 <div class="selecttype">
@@ -48,6 +49,7 @@
                         <option value="tenant">Texas</option>
                     </select>
                 </div>
+                <span class="search"><img src="../assets/images/search.png" alt=""></span>
             </div>
         </div>
        </div>
@@ -57,11 +59,33 @@
 </template>
 
 <script>
+import useNavigation from '../composables/useNavigation';
+import { Loader } from '@googlemaps/js-api-loader'
+import { ref, onMounted, computed } from 'vue';
+
+const GOOGLE_MAPS_API_KEY = "AIzaSyASONGfm2JJrJtwgTHKFLQIKdvs_2U_a78"
+
 export default {
     name: 'Landingpage',
    setup(){
-
-    }
+    const {coords, isSupported } = useNavigation();
+    const currentPos = computed(() => {
+        return {lat :coords.value.latitude, lng : coords.value.longitude}
+    })
+    const map = ref(null)
+    const loader = new Loader({
+        apiKey: GOOGLE_MAPS_API_KEY,
+    })
+    onMounted(async () =>{
+        await loader.load();
+        new google.maps.Map(map.value, {
+            center: currentPos.value,
+            zoom: 12,
+        })
+        }
+    )
+    return {map};
+}
 
 }
 </script>
@@ -73,7 +97,7 @@ export default {
 
 
 .wrapper{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 .bckimage{
@@ -122,6 +146,7 @@ export default {
     align-items: center;
     list-style-type: none;
 }
+
 .navigationmenu ul li{
    font-family: 'DM Sans', sans-serif;
     font-style: normal;
@@ -143,10 +168,18 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
     height: 80%;
     margin: 0 auto;
-    padding: 10% 0;
+    padding: 2% 0;
+}
+.maps{
+    width: 400px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 .ad{
     font-style: normal;
@@ -156,10 +189,18 @@ export default {
     line-height: 70px;
     color: #FFFFFF;
     width: 50%;
+    flex: 1;
 }
 .map{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    flex: 1;
+}
+.direction{
+    width: 400px;
+    margin: 0 auto;
 }
 .directioninput{
     display: flex;
@@ -185,6 +226,20 @@ export default {
     text-align: center;
     border: 1px solid #E6E6E6;
     border-radius: 5px 0px 0px 5px;
+}
+.search{
+    width: 50px;
+    padding: 10px;
+    background: #23A6F0;
+    border: 1px solid #E6E6E6;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+}
+.search img{
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+   margin-top: 2px;
 }
 #type{
     border: none;

@@ -50,7 +50,7 @@ export default {
   justify-content: center;
   padding: 3% 5%;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .leftinfo {
   display: flex;
@@ -118,6 +118,7 @@ img {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  align-items: center;
 }
 .flexibilityinfo {
   font-family: "inter";

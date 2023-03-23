@@ -5,8 +5,8 @@
   <Costspage/>
   <Propertypage/>
   <Flexibility/>
-  <Form/>
-  <Footer/>
+  <Form />
+  <Footer />
   <div class="sidepanel">
     <div class="close" @click="close">X</div>
     <ul class="navigation">
@@ -64,6 +64,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
+  font-family:'Inter';
 }
 .sidepanel{
   display: none;
