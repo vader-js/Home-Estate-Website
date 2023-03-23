@@ -63,7 +63,7 @@ import useNavigation from '../composables/useNavigation';
 import { Loader } from '@googlemaps/js-api-loader'
 import { ref, onMounted, computed } from 'vue';
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyASONGfm2JJrJtwgTHKFLQIKdvs_2U_a78"
+
 
 export default {
     name: 'Landingpage',
