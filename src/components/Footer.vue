@@ -46,7 +46,7 @@
         </div>
         <div class="middle">
             <p class="tel"><span><img src="../assets/images/Path.png" alt=""></span> (123)456-7890</p>
-            <p class="fax"><span><img src="../assets/images/Shape (1).png" alt=""></span>(123)456-7890</p>
+            <p class="fax"><span><img src="../assets/images/Shapes.png" alt=""></span>(123)456-7890</p>
         </div>
         <div class="media">
             <p>Social Media</p>
