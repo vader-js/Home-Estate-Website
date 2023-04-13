@@ -42,12 +42,10 @@ export default {
   setup(){
     const sidepanel = ()=>{
       const hamburger = document.querySelector('.sidepanel');
-      console.log(hamburger);
       hamburger.classList.add('active');
     }
     const close = ()=>{
       const hamburger = document.querySelector('.sidepanel');
-      console.log(hamburger);
       hamburger.classList.remove('active');
     }
  
@@ -71,12 +69,13 @@ export default {
 }
 
 
+
 @media screen and (max-width: 450px ){
 .active{
   display: block;
   width: 70%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -93,6 +92,7 @@ export default {
   font-size: 35px;
   padding: 10px;
   cursor: pointer;
+  width: 20%;
 }
 .navigation{
   display: flex;

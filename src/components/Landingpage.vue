@@ -63,7 +63,7 @@ import useNavigation from '../composables/useNavigation';
 import { Loader } from '@googlemaps/js-api-loader'
 import { ref, onMounted, computed } from 'vue';
 
-
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_API_KEY
 
 export default {
     name: 'Landingpage',
@@ -265,7 +265,7 @@ export default {
 @media screen and (max-width: 450px ){
 .wrapper{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     position: inherit;
 }
 .bckimage{
@@ -313,6 +313,16 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.maps{
+    width: 350px;
+    height: 250px;
+}
+.direction{
+    width: 350px;
+}
+.directioninput{
+    width: 100%;
 }
 .ad{
     font-size: 30px;

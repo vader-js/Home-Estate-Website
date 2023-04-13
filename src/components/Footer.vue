@@ -286,4 +286,22 @@ nav{
 .socials span:not(:last-child){
     margin-right: 10px;
 }
+@media screen and (max-width: 450px){
+  nav{
+    width: 90%;
+  }
+.nav{
+  flex-wrap: wrap;
+}
+.bottomright aside{
+  width: 90%;
+  flex-wrap: wrap;
+}
+.bottomright{
+   margin: 0 auto;
+}
+.bottomleft{
+  flex: 0.5;
+}
+}
 </style>

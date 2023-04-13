@@ -8,3 +8,7 @@
    width: 100%;/*  use to be 100vw */
   height: auto;
 }
+html{
+  scroll-behavior: smooth;
+}
+

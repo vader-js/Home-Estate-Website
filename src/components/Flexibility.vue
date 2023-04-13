@@ -1,5 +1,5 @@
 <template>
-  <div class="pagewrapper">
+  <div class="pagewrapper" id="flex">
     <div class="leftinfo">
       <div class="topimg">
         <div class="firstimg group">
